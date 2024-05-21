@@ -1,6 +1,6 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   padding: 2rem;
   text-align: center;
 }
@@ -52,3 +52,45 @@
   padding: 0;
 }
 
+.main-content {
+  margin-top: 60px; /* Ajusta este valor según la altura de tu barra de navegación */
+}
+
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Estilos personalizados para la tabla */
+.table-custom thead th {
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid red;
+}
+
+.table-custom tbody tr td {
+  background-color: black;
+  color: white;
+}
+
+.table-custom tbody tr:nth-of-type(even) {
+  background-color: #333; /* Color de fondo diferente para filas pares */
+}
+
+/* Estilos personalizados para la tabla */
+.table-custom thead th {
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid red;
+}
+
+.table-custom tbody tr td {
+  background-color: white;
+  color: black;
+}
+
+.table-custom tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa; /* Color de fondo diferente para filas pares */
+}
