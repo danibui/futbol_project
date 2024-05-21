@@ -17,4 +17,4 @@ function Icons() {
   );
 }
 
-export default App;
+export default Icons;
