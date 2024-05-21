@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { Cuerpo } from './componentes/cuerpo'
 import AlignmentExample from './componentes/navbar_boostrap';
+import ResponsiveBreakpointsExample from './componentes/table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Icons from './componentes/icons';
 
@@ -11,9 +12,7 @@ function App() {
 
   return (
     <>
-    <AlignmentExample></AlignmentExample>
-    <Cuerpo></Cuerpo>
-    <Icons></Icons>
+    <ResponsiveBreakpointsExample></ResponsiveBreakpointsExample>
     </>
   )
 }
