@@ -17,7 +17,17 @@ function ResponsiveExample() {
     { id : '7', player: 'Burton Herbertson', position: 'Forward', goals: 21, age: 31 },
     { id : '8', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
     { id : '9', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    // Agrega más jugadores si es necesario
+    { id : '10', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '11', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '12', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '13', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '14', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '15', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '16', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '17', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '18', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '19', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '20', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
   ];
 
   const [visiblePlayers, setVisiblePlayers] = useState(players);
