@@ -1,0 +1,19 @@
+.icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Reducir el padding para un contenedor más compacto */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    width: 300px; /* Ajustar el tamaño del contenedor al contenido */
+    margin: 10px auto; /* Centrando el contenedor */
+  }
+  
+  .icon-wrapper {
+    display: flex;
+  }
+  
+  .icon {
+    margin: 0 2px; /* Reducir la distancia entre los íconos */
+  }
+  

@@ -1,16 +1,17 @@
 import React from 'react';
 import { FaTwitter, FaPinterest, FaReddit, FaTelegramPlane } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import './Icons.css'; // Asegúrate de importar el archivo CSS
 
 function Icons() {
   return (
-    <div>
-      <div>
-        <FaTwitter size={40} color="#1DA1F2" style={{ margin: '0 10px' }} />
-        <FaPinterest size={40} color="#E60023" style={{ margin: '0 10px' }} />
-        <MdEmail size={40} color="#D44638" style={{ margin: '0 10px' }} />
-        <FaReddit size={40} color="#FF4500" style={{ margin: '0 10px' }} />
-        <FaTelegramPlane size={40} color="#0088cc" style={{ margin: '0 10px' }} />
+    <div className="icons-container">
+      <div className="icon-wrapper">
+        <FaTwitter size={40} color="#1DA1F2" className="icon" />
+        <FaPinterest size={40} color="#E60023" className="icon" />
+        <MdEmail size={40} color="#D44638" className="icon" />
+        <FaReddit size={40} color="#FF4500" className="icon" />
+        <FaTelegramPlane size={40} color="#0088cc" className="icon" />
       </div>
     </div>
   );

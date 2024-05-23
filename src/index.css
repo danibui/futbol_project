@@ -70,3 +70,14 @@ button:focus-visible {
 .highlight {
   background-color: yellow; /* Puedes cambiar el color a lo que prefieras */
 }
+
+/*Botones 'Pintar Pares'  'Pintar Impares' 'Traer de 1 a 10'  'Traer de 11 a 20'*/
+.actions-container .btn {
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.actions-container .btn:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}

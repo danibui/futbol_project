@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import '../App.css'; // Asegúrate de que la ruta sea correcta
+import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 function ResponsiveExample() {
   const columnNames = ['#', 'PLAYER', 'POSITION', 'GOALS', 'AGE'];
@@ -16,27 +18,26 @@ function ResponsiveExample() {
     { id : '6', player: 'David Norman', position: 'Midfielder', goals: 12, age: 31 },
     { id : '7', player: 'Burton Herbertson', position: 'Forward', goals: 21, age: 31 },
     { id : '8', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '9', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '10', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '11', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '12', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '13', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '14', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '15', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '16', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '17', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '18', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '19', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id : '20', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '9', player: 'Antonio Ramirez', position: 'Defender', goals: 3, age: 29 },
+    { id : '10', player: 'Carlos Martinez', position: 'Midfielder', goals: 14, age: 27 },
+    { id : '11', player: 'Stefan Kovac', position: 'Goalkeeper', goals: 0, age: 30 },
+    { id : '12', player: 'Luis Fernandez', position: 'Forward', goals: 18, age: 26 },
+    { id : '13', player: 'Patrick O\'Connor', position: 'Defender', goals: 5, age: 33 },
+    { id : '14', player: 'Jorge Gonzalez', position: 'Midfielder', goals: 10, age: 25 },
+    { id : '15', player: 'Ricardo Lopez', position: 'Forward', goals: 22, age: 30 },
+    { id : '16', player: 'Sebastian Muller', position: 'Midfielder', goals: 8, age: 28 },
+    { id : '17', player: 'Julian Smith', position: 'Defender', goals: 6, age: 27 },
+    { id : '18', player: 'Robert Johnson', position: 'Forward', goals: 15, age: 29 },
+    { id : '19', player: 'Nicolas Alvarado', position: 'Midfielder', goals: 11, age: 24 },
+    { id : '20', player: 'Marco Aurelio', position: 'Defender', goals: 4, age: 32 },
   ];
 
   const [visiblePlayers, setVisiblePlayers] = useState(players);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
+  const handleSearch = () => {
     const filteredPlayers = players.filter(player =>
-      player.player.toLowerCase().includes(event.target.value.toLowerCase())
+      player.player.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setVisiblePlayers(filteredPlayers);
   };
@@ -61,20 +62,27 @@ function ResponsiveExample() {
 
   return (
     <div className="container">
-      <div className="search-container">
+      <div className="title-container" style={{ textAlign: 'center', marginBottom: '1rem' }}>
+        <h3>TOP SCORERS</h3>
+      </div>
+      <div className="search-container" style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
         <input
           type="text"
-          placeholder="Buscar jugador..."
+          placeholder="Buscar por nombre de jugador..."
           value={searchTerm}
-          onChange={handleSearch}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{ marginRight: '0.5rem', width: '300px' }} 
         />
+        <Button variant="secondary" onClick={handleSearch}>
+          <FontAwesomeIcon icon={faSearch} />
+        </Button>
       </div>
-      <div className="actions-container">
+      <div className="actions-container" style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '1rem' }}>
         <ButtonGroup className="mb-3">
-          <Button variant="secondary" onClick={handleEvenRows}>Pintar Pares</Button>
-          <Button variant="secondary" onClick={handleOddRows}>Pintar Impares</Button>
-          <Button variant="secondary" onClick={handleRows1To10}>Traer de 1 a 10</Button>
-          <Button variant="secondary" onClick={handleRows11To20}>Traer de 11 a 20</Button>
+          <Button variant="light" onClick={handleEvenRows}>Pintar Pares</Button>
+          <Button variant="light" onClick={handleOddRows}>Pintar Impares</Button>
+          <Button variant="light" onClick={handleRows1To10}>Traer de 1 a 10</Button>
+          <Button variant="light" onClick={handleRows11To20}>Traer de 11 a 20</Button>
         </ButtonGroup>
       </div>
       <Table responsive className="table-custom">
