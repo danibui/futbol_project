@@ -10,58 +10,54 @@ function ResponsiveExample() {
   const columnNames = ['#', 'PLAYER', 'POSITION', 'GOALS', 'AGE'];
 
   const players = [
-    { id: '1', player: 'Michel Meier', position: 'Goalkeeper', goals: 0, age: 31 },
-    { id: '2', player: 'Roberto Alexis', position: 'Defender', goals: 24, age: 32 },
-    { id: '3', player: 'John Winfield', position: 'Defender', goals: 21, age: 32 },
-    { id: '4', player: 'John White', position: 'Forward', goals: 7, age: 31 },
-    { id: '5', player: 'Michael Davis', position: 'Midfielder', goals: 9, age: 28 },
-    { id: '6', player: 'David Norman', position: 'Midfielder', goals: 12, age: 31 },
-    { id: '7', player: 'Burton Herbertson', position: 'Forward', goals: 21, age: 31 },
-    { id: '8', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
-    { id: '9', player: 'Antonio Ramirez', position: 'Defender', goals: 3, age: 29 },
-    { id: '10', player: 'Carlos Martinez', position: 'Midfielder', goals: 14, age: 27 },
-    { id: '11', player: 'Stefan Kovac', position: 'Goalkeeper', goals: 0, age: 30 },
-    { id: '12', player: 'Luis Fernandez', position: 'Forward', goals: 18, age: 26 },
-    { id: '13', player: 'Patrick O\'Connor', position: 'Defender', goals: 5, age: 33 },
-    { id: '14', player: 'Jorge Gonzalez', position: 'Midfielder', goals: 10, age: 25 },
-    { id: '15', player: 'Ricardo Lopez', position: 'Forward', goals: 22, age: 30 },
-    { id: '16', player: 'Sebastian Muller', position: 'Midfielder', goals: 8, age: 28 },
-    { id: '17', player: 'Julian Smith', position: 'Defender', goals: 6, age: 27 },
-    { id: '18', player: 'Robert Johnson', position: 'Forward', goals: 15, age: 29 },
-    { id: '19', player: 'Nicolas Alvarado', position: 'Midfielder', goals: 11, age: 24 },
-    { id: '20', player: 'Marco Aurelio', position: 'Defender', goals: 4, age: 32 },
+    { id : '1', player: 'Michel Meier', position: 'Goalkeeper', goals: 0, age: 31 },
+    { id : '2', player: 'Roberto Alexis', position: 'Defender', goals: 24, age: 32 },
+    { id : '3', player: 'John Winfield', position: 'Defender', goals: 21, age: 32 },
+    { id : '4', player: 'John White', position: 'Forward', goals: 7, age: 31 },
+    { id : '5', player: 'Michael Davis', position: 'Midfielder', goals: 9, age: 28 },
+    { id : '6', player: 'David Norman', position: 'Midfielder', goals: 12, age: 31 },
+    { id : '7', player: 'Burton Herbertson', position: 'Forward', goals: 21, age: 31 },
+    { id : '8', player: 'James Brady', position: 'Forward', goals: 12, age: 20 },
+    { id : '9', player: 'Antonio Ramirez', position: 'Defender', goals: 3, age: 29 },
+    { id : '10', player: 'Carlos Martinez', position: 'Midfielder', goals: 14, age: 27 },
+    { id : '11', player: 'Stefan Kovac', position: 'Goalkeeper', goals: 0, age: 30 },
+    { id : '12', player: 'Luis Fernandez', position: 'Forward', goals: 18, age: 26 },
+    { id : '13', player: 'Patrick O\'Connor', position: 'Defender', goals: 5, age: 33 },
+    { id : '14', player: 'Jorge Gonzalez', position: 'Midfielder', goals: 10, age: 25 },
+    { id : '15', player: 'Ricardo Lopez', position: 'Forward', goals: 22, age: 30 },
+    { id : '16', player: 'Sebastian Muller', position: 'Midfielder', goals: 8, age: 28 },
+    { id : '17', player: 'Julian Smith', position: 'Defender', goals: 6, age: 27 },
+    { id : '18', player: 'Robert Johnson', position: 'Forward', goals: 15, age: 29 },
+    { id : '19', player: 'Nicolas Alvarado', position: 'Midfielder', goals: 11, age: 24 },
+    { id : '20', player: 'Marco Aurelio', position: 'Defender', goals: 4, age: 32 },
   ];
 
   const [visiblePlayers, setVisiblePlayers] = useState(players);
   const [searchTerm, setSearchTerm] = useState('');
-  const [highlightType, setHighlightType] = useState(null); // Add this state
 
   const handleSearch = () => {
     const filteredPlayers = players.filter(player =>
       player.player.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setVisiblePlayers(filteredPlayers);
-    setHighlightType(null); // Reset highlight when searching
   };
 
   const handleEvenRows = () => {
-    setVisiblePlayers(players);
-    setHighlightType('even'); // Set highlight type to even
+    const evenRows = players.filter((_, index) => index % 2 === 1);
+    setVisiblePlayers(evenRows);
   };
 
   const handleOddRows = () => {
-    setVisiblePlayers(players);
-    setHighlightType('odd'); // Set highlight type to odd
+    const oddRows = players.filter((_, index) => index % 2 === 0);
+    setVisiblePlayers(oddRows);
   };
 
   const handleRows1To10 = () => {
     setVisiblePlayers(players.slice(0, 10));
-    setHighlightType(null); // Reset highlight when filtering
   };
 
   const handleRows11To20 = () => {
     setVisiblePlayers(players.slice(10, 20));
-    setHighlightType(null); // Reset highlight when filtering
   };
 
   return (
@@ -75,7 +71,7 @@ function ResponsiveExample() {
           placeholder="Buscar por nombre de jugador..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ marginRight: '0.5rem', width: '300px' }}
+          style={{ marginRight: '0.5rem', width: '300px' }} 
         />
         <Button variant="secondary" onClick={handleSearch}>
           <FontAwesomeIcon icon={faSearch} />
@@ -99,8 +95,8 @@ function ResponsiveExample() {
         </thead>
         <tbody>
           {visiblePlayers.map((player, index) => (
-            <tr key={index} className={highlightType === 'even' && player.id % 2 === 0 ? 'highlight' : highlightType === 'odd' && player.id % 2 !== 0 ? 'highlight' : ''}>
-              <td className={highlightType === 'even' && player.id % 2 === 0 ? 'highlight' : highlightType === 'odd' && player.id % 2 !== 0 ? 'highlight' : ''}>{player.id}</td>
+            <tr key={index}>
+              <td>{player.id}</td>
               <td>{player.player}</td>
               <td>{player.position}</td>
               <td>{player.goals}</td>
