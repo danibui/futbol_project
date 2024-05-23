@@ -98,3 +98,8 @@
 .highlight {
   background-color: red; /* Puedes cambiar el color a lo que prefieras */
 }
+
+.search-container input {
+  width: 300px; /* Ajusta el ancho aquí */
+  margin-right: 0.5rem;
+}
