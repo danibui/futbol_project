@@ -19,6 +19,17 @@ const NavBar = () => {
     <div>
       <div className="top-menu">
         <ul className="top-menu-links">
+          <li className="top-menu-item contact-item">
+            <a href="mailto:contact@topclub.com">
+              <i className="fas fa-envelope"></i> contact@topclub.com
+            </a>
+            <a href="tel:+1325538642">
+              <i className="fas fa-phone-alt"></i> +1 325 53 86 42
+            </a>
+            <a href="27 Orlando St, Porland">
+              <i className="fas fa-map-marker-alt"></i> 27 Orlando St, Porland
+            </a>
+          </li>
           <li className="top-menu-item"><a href="#option1">Buy Tickets</a></li>
           <li className="top-menu-item"><a href="#option2">Login</a></li>
           <li className="top-menu-item"><a href="#option3">Register</a></li>

@@ -82,6 +82,7 @@
   padding: 10px 20px;
   display: flex;
   justify-content: flex-end;
+  align-items: center; /* Alinea elementos verticalmente */
 }
 
 .top-menu .top-menu-links {
@@ -90,6 +91,7 @@
   padding: 0;
   display: flex;
   align-items: center;
+  width: 100%; /* Para usar el espacio disponible */
 }
 
 .top-menu .top-menu-item {
@@ -103,7 +105,25 @@
 }
 
 .top-menu .top-menu-item a:hover {
-  color: red;
+  color: orange;
+}
+
+.top-menu .contact-item {
+  margin-right: auto; /* Mueve el elemento a la izquierda */
+  display: flex;
+  align-items: center;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  margin-right: 15px; /* Espacio entre el teléfono y el correo */
+}
+
+.contact-item a i {
+  margin-right: 5px;
 }
 
 /* Estilos responsivos */
